@@ -4,8 +4,21 @@ use finksTest;
 create table if not exists images(
 	title varchar(40),
 	votes int(10),
-	url varchar(2048) not null
+	userid int(10),
+	url varchar(2048) not null,
+	imageid int(10) primary key not null
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+create table if not exists users(
+	username varchar(40),
+	password varchar(40),
+	firstname varchar(40),
+	lastname varchar(40),
+	email varchar(40),
+	tags varchar(120),
+	userid int(10) primary key not null
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
 
 insert into images (title, votes, url) values
 ('image1', 2, "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350"),
@@ -19,5 +32,3 @@ id int(1) not null auto_increment,
 url varchar(2048) not null,
 primary key (id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
-
