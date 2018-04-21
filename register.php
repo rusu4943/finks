@@ -12,11 +12,6 @@ if($_POST){
 		echo "<script>alert('User name already exists!');history.back();</script>";
 		exit;
 	}
-	// $dataArr = $db->fetch_all("select * from users where mobile = '$mobile' ");
-	// if($dataArr){
-	// 	echo "<script>alert('The phone number has been used!');history.back();</script>";
-	// 	exit;
-	// }
 	
 	$saveData = array(
 		'username' => $username,
@@ -31,7 +26,7 @@ if($_POST){
 
 	setcookie("blog_uid",$uid, time()+3600*24);
 	
-	echo "<script>alert('login was successful.');location.href='search.php';</script>";
+	echo "<script>alert('login was successful.');location.href='homepage.html';</script>";
 	exit;
 }
 echo "<script>location.href='search.php';</script>";
