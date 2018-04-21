@@ -2,8 +2,8 @@
 include_once('db.php');
 $db = new db();
 if($_POST){
-	$username = trim($_POST['name']);
-	$password = trim($_POST['pwd']);
+	$username = trim($_POST['login__username']);
+	$password = trim($_POST['login__password']);
 
 	$dataArr = $db->fetch_one("select * from users where username = '$username' and password = '$password' ");
 	if(!$dataArr){

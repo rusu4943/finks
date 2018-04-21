@@ -22,7 +22,7 @@ error_reporting(0);
 				'hostname' => 'localhost',
 				'username' => 'root',
 				'password' => 'root',
-				'database' => 'foodSite',
+				'database' => 'finks',
 				'mysqli' => true,
 				'debug' => false
 			);

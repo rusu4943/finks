@@ -2,14 +2,10 @@
 include_once('db.php');
 $db = new db();
 if($_POST){
-	$username = trim($_POST['name']);
-	$password = trim($_POST['pwd']);
+	$username = trim($_POST['username']);
+	$password = trim($_POST['password']);
 	$email = trim($_POST['email']);
-	$phone = trim($_POST['phone']);
-	$date = trim($_POST['date']);
-	$check = trim($_POST['check']);
-	$sex = trim($_POST['sex']);
-	$introduce = trim($_POST['introduce']);
+	$check_password = trim($_POST['passwordRepeat']);
 
 	$dataArr = $db->fetch_all("select * from users where username = '$username' ");
 	if($dataArr){
@@ -25,12 +21,7 @@ if($_POST){
 	$saveData = array(
 		'username' => $username,
 		'email' => $email,
-		'phone' => $phone,
 		'password' => $password,
-		'birthday' => $date,
-		'check1' => $check,
-		'sex' => $sex,
-		'introduce' => $introduce,
 		'createtime' => time(),
 		'updatetime' => time()
 	);
