@@ -1,22 +1,22 @@
 <?php
-include_once('db.php');
-$db = new db();
-if($_POST){
-	$username = trim($_POST['login__username']);
-	$password = trim($_POST['login__password']);
+declare(strict_types=1);
 
-	$dataArr = $db->fetch_one("select * from users where username = '$username' and password = '$password' ");
-	if(!$dataArr){
-		echo "<script>alert('ERROR Incorrect username or password!');history.back();</script>";
-		exit;
-	}
+use PHPUnit\Framework\TestCase;
 
-	setcookie("blog_uid",$dataArr['uid'], time()+3600*24);
-	echo "<script>alert('Login success.');location.href='search.php';</script>";
-	exit;
+final class LoginTest extends TestCase
+{
+    public function testLoginWithExistingUser(): void
+    {
+        $this->assertInstanceOf(
+            Email::class,
+            Email::fromString('user@example.com')
+        );
+    }
+
+    public function testAttemptLoginNonExistingUser(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        Email::fromString('invalid');
+    }
 }
-	echo "<script>location.href='login.html';</script>";
-
-exit;
-?>
-

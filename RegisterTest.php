@@ -1,34 +1,35 @@
 <?php
-include_once('db.php');
-$db = new db();
-if($_POST){
-	$username = trim($_POST['username']);
-	$password = trim($_POST['password']);
-	$email = trim($_POST['email']);
-	$check_password = trim($_POST['passwordRepeat']);
+declare(strict_types=1);
 
-	$dataArr = $db->fetch_all("select * from users where username = '$username' ");
-	if($dataArr){
-		echo "<script>alert('User name already exists!');history.back();</script>";
-		exit;
-	}
-	
-	$saveData = array(
-		'username' => $username,
-		'email' => $email,
-		'password' => $password,
-		'createtime' => time(),
-		'updatetime' => time()
-	);
-	
-	
-	$uid = $db->insert('users',$saveData);
+use PHPUnit\Framework\TestCase;
 
-	setcookie("blog_uid",$uid, time()+3600*24);
-	
-	echo "<script>alert('login was successful.');location.href='homepage.html';</script>";
-	exit;
+final class RegisterTest extends TestCase
+{
+    public function testRegisterWithNewUser(): void
+    {
+        $user_post = array('username' => 'test',
+    				   'password' => 'test',
+					   'email' => 'test@example.com',
+    				   'passwordRepeat' => 'test'
+    				);
+        $this->assertEquals(
+        	register($user_post),
+        	0
+        );
+
+    }
+
+    public function testAttemptRegisterExistingUser(): void
+    {
+    	$user_post = array('username' => 'test',
+    					   'password' => 'test',
+    					   'email' => 'test@example.com',
+    					   'passwordRepeat' => 'test'
+    				);
+    	register($user_post);
+        $this->assertEquals(
+        	register($user_post),
+        	1
+        );
+    }
 }
-echo "<script>location.href='search.php';</script>";
-exit;
-?>
