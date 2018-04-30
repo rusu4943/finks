@@ -34,6 +34,7 @@
   display: none;
 }
 
+/*
 .icon {
   display: inline-block;
   fill: white;
@@ -43,7 +44,7 @@
   vertical-align: middle;
   width: 1em;
 }
-
+*/
 /* layout/base.css */
 
 * {
@@ -201,7 +202,7 @@ p {
 
 
 /* ------------------------------    MENU OPTIONS ---------------------------------------------  */
-#name  /* name button */
+#finks  /* name button */
 {
     float:left;
     font-size: 25px;
