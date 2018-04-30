@@ -1,20 +1,22 @@
 <!DOCTYPE html> 
 <html>
 <head>
-	<meta charset="UTF-8"> 
-	  <title>Members</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    
 
+	  <title>Members</title>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
 
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-
- <link rel="stylesheet" type="text/css" href="Signup.css">
+    <link rel="stylesheet" type="text/css" href="Signup.css"> 
 </head>
+
+
 <body>
+
+
 
 
 <div> 
@@ -22,7 +24,7 @@
  <div class="signup__container">
   <div class="container__child signup__thumbnail">
     <div class="thumbnail__logo">
-      <svg class="logo__shape" width="25px" viewBox="0 0 634 479" xmlns="http://www.w3.org/2000/svg"><g><path d="       "/></g></svg>
+      <svg class="logo__shape" width="25px" viewBox="0 0 634 479" xmlns="http://www.w3.org/2000/svg"><g><path d="        "/></g></svg>
       <h1 class="logo__text"></h1>
     </div>
 
@@ -42,34 +44,48 @@
     </div>
 
     <div class="signup__overlay"></div>
-  </div>
+</div>
 
 
+
+<!-- Sign Up/Registration Form -->
   <div class="container__child signup__form">
     <form action="register.php" method="POST">
+       <!--- username: text box -->
       <div class="form-group">
-        <label for="username">Username</label>
-        <input class="form-control" type="text" name="username" id="username" placeholder="" required />
+        <label for="name">USERNAME</label>
+        <input type="text" class="form-control" id="name" id="username" placeholder="Please enter a username" name="name" required />
+        <?php echo $_POST[name_error]?>
       </div>
+  
+      <!-- Email Address text box  -->
       <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control" type="text" name="email" id="email" placeholder="" required />
+        <label for="email">EMAIL</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter a password" name="email" required />
       </div>
+
+     <!-- Password text box -->
       <div class="form-group">
-        <label for="password">Password</label>
-        <input class="form-control" type="password" name="password" id="password" placeholder="" required />
+        <label for="pwd">PASSWORD</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Please enter a password"  name="pwd1" required />
+        <?php echo $_POST[pass_error_repeat]?>
       </div>
+
+
+   <!-- Confirm/repeat Password text box-->
       <div class="form-group">
-        <label for="passwordRepeat">Repeat Password</label>
-        <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="" required />
+        <label for="pwd1">CONFIRM PASSWORD</label>
+        <input type="password" class="form-control" id="pwd1" placeholder="Reenter password"  name="pwd1"  required />
+        <?php echo $_POST[pass_error_repeat]?>
       </div>
+
+
       <div class="m-t-lg">
         <ul class="list-inline">
           <li>
             <input class="btn btn--form" type="submit" value="Sign Up" />
           </li>
-          <li>
-            <a class="signup__link" href="Login.html">I am already a member</a>
+          <li><a class="signup__link" href="Login.html">I am already a member</a>
           </li>
         </ul>
       </div>
@@ -80,28 +96,29 @@
 </div>
 
 
-<div class="navbar">
-      <a href="Homepage.html" id="home"> HOME</a>
-     <a href="Homepage.html" id="name">FINKS</a>
-     <a href="Login.html" id="login">My Account</a>
+
+
+  <div class="navbar">
+   <a href="Login.html" id="login">MY ACCOUNT</a>
+   <a href="Upload.html" id="login">UPLOAD</a>
+   <a href="HompageSearch.php" id="login">SEARCH</a>
+
+     <a href="HomepageSearch.php" id="finks">FINKS</a>
+
 
    
-    <div class="dropdown">
-            <button class="dropbutton">BROWSE <i class="fa fa-caret-down"></i> </button>
+      <div class="dropdown">
+            <button class="dropbutton">BROWSE </button>
     
           <div class="dropdown-content">
-                <a href="Help.html"> Help</a>
-                <a href="Contact.html">Contact Us</a>
-                <a href="About.html">About Us</a>
+                <i> <a href="Login.html" id="login">Ranking</a> </i>
+               <i> <a href="Login.html" id="home">Photos</a> </i>
           </div>
-    </div>
- </div>
+      </div>
+  </div>
 
 
-
-
-
-
+<script type="text/javascript" src="js/script.js?v=005"></script>
 
 
 
