@@ -77,7 +77,7 @@ if($blog_uid){
     <ul class="nav navbar-nav navbar-right" id="unlogined">
         
         <li class="navbar-login">
-            <a rel="nofollow" href="login.html">login</a>
+            <a rel="nofollow" href="Login.html">login</a>
         </li>
     </ul>
   <?php } ?>
