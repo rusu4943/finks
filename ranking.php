@@ -110,7 +110,7 @@ if(isset($_GET['keyword'])){
 
    <div class="row">
           <!-- restaurants -->
-          <div class="restaurant-list fl" id="itemContainer">
+          <div class="finks-list fl" id="itemContainer">
             <!--item example-->
             <?php
               
