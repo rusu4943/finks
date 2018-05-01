@@ -12,10 +12,10 @@ if($_POST){
 	}
 
 	setcookie("blog_uid",$dataArr['uid'], time()+3600*24);
-	echo "<script>alert('Login success.');location.href='Homepagesearch.php';</script>";
+	echo "<script>alert('Login success.');location.href='search.php';</script>";
 	exit;
 }
-	echo "<script>location.href='Login.html';</script>";
+	echo "<script>location.href='login.html';</script>";
 
 exit;
 ?>
