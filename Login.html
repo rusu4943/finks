@@ -1,70 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> 
 <head>
-	<meta charset="utf-8"> 
- <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Login</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="Login.css">
-
-
-  <title> Login </title>
-
+   <link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+  
 </head>
+<body class="register">
+<ul class="navs">
+  <li class="logo">
+        <!--NAVIGATION-->
+    <i class="iconfont icon-daocha"></i>
+  </li>
+  <li class="active fr"><a  href="registration.php">REGISTER</a></li>
+  <li class="fr"><a  href="ranking.php">RANKING</a></li>
+  <li class="fr"><a  href="results_sample.php">PHOTOS</a></li>
+  <li class="fr"><a  href="submission.php">UPLOAD</a></li>
+  <li class="fr"><a  href="search.php">SEARCH</a></li>
+</ul>
 
-
-
-<body class="align">
-
-
-<div class="navbar">
-   <a href="Login.html" id="login">MY ACCOUNT</a>
-   <a href="Upload.html" id="login">UPLOAD</a>
-   <a href="HompageSearch.php" id="login">SEARCH</a>
-
-     <a href="HomepageSearch.php" id="finks">FINKS</a>
-
-
-   
-    <div class="dropdown">
-            <button class="dropbutton">BROWSE </button>
-    
-          <div class="dropdown-content">
-                <i> <a href="Login.html" id="login">Ranking</a> </i>
-               <i> <a href="Login.html" id="home">Photos</a> </i>
-          </div>
+  <div class="container">
+  <h2 class="center">
+    <!--allow user to login by using their google account-->
+    <a class="btn btn-info" href="registration.php">Registration</a>
+  </h2>
+  
+  <!--registration form-->
+  <form action="login.php" method="post">
+    <!--user name: text box-->
+    <div class="form-group">
+      <label for="name" style="color:black">USER NAME:</label>
+      <input type="text" class="form-control" id="name" placeholder="Please enter your user name" name="name">
     </div>
-</div>
+    <div class="form-group">
+      <!--password: text box-->
+      <label for="pwd" style="color:black">PASSWORD:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Please enter your password" name="pwd">
+    </div>
+  
+    <!--submit button -->
+    <button type="submit" class="btn btn-danger" style="margin-left: 50%;" id="register">CONFIRM</button>
+  </form>
+  
+  </div>
 
+  <script type="text/javascript" src="js/script.js"></script>
 
+  </body>
+  </html>
 
- <div class="grid">
-
-    <form action="login.php" method="POST" class="form login">
-
-      	<div class="form__field">
-        		<label for="name"></label>
-        		<input type="text" class="form__input"  id="name" placeholder="Enter Username" required>
-      	</div>
-
-     	 <div class="form__field">
-       		 <label for="pwd"></label>
-       		 <input type="password" class="form__input"  id="pwd" placeholder="Enter password" name="pwd" required>
-     	 </div>
-
-      	<div class="form__field">
-       		 <input type="submit" value="Sign In">
-    	</div>
-
-   </form>
-    
-     <!-- Password and Sign-in Option -->
-    <p class="text--center"><a href="#" style="color:#33cccc"> Forgot Password? </a> <a href="Signup.html" style="color: #434a52"> Click here to Sign Up!</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
-
- </div>
-
-
-
-
-
-</body>
-</html>
+        
