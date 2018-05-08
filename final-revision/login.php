@@ -102,7 +102,7 @@
    </form>
     
      <!-- Password and Sign-in Option -->
-    <p class="text--center"><a href="#" style="color:#33cccc"> Forgot Password? </a> <a href="Signup.php" style="color: #434a52"> Click here to Sign Up!</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+    <p class="text--center"> <a href="Signup.php" style="color: #434a52"> Click here to Sign Up!</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
 
  </div>
 
