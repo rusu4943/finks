@@ -1,84 +1,57 @@
-
 <?php
-include_once("db.php");
-$db = new db();
+    session_start();
+    if ($_POST)
+    {
 
-$userinfo = array();
-
-$blog_uid = isset($_COOKIE['blog_uid']) ? $_COOKIE['blog_uid'] : 0;
-
-if($blog_uid){
-  $userinfo = $db->fetch_one("select * from users where uid = $blog_uid ");
-}
-if($blog_uid){
-    
-    
-  }else{
-    //echo "<script>location.href='login.html';</script>";
-    //exit;
-  }
-
+    }
 ?>
-<!DOCTYPE html>
-<html lang="en"> 
-<head>
-   <title>home</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-   <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-   <link rel="stylesheet" type="text/css" href="css/mystyle.css?v=0001"/>
- 
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="search.css" />
 </head>
-<body class="register search">
-<ul class="navs">
-  <li class="logo">
-    
-    <!--NAVIGATION-->
-    <i class="iconfont icon-daocha"></i>
-  </li>
-  <li class="fr"><a  href="registration.php">REGISTER</a></li>
-  <li class="fr"><a  href="ranking.php">RANKING</a></li>
-  <li class="fr"><a  href="results_sample.php">PHOTOS</a></li>
-  <li class="fr"><a  href="submission.php">UPLOAD</a></li>
-  <li class="active fr"><a  href="search.php">SEARCH</a></li>
-</ul>
-<?php if($blog_uid){ ?>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-sign">
-            <a rel="nofollow" href="##" ><?php echo $userinfo['username']?></a>
-            
-        </li>
-        <li class="navbar-login">
-            <a rel="nofollow" href="loginout.php" id="j_exit">Logout</a>
-        </li>
-    </ul>
-  <?php } else{ ?>
-    <ul class="nav navbar-nav navbar-right" id="unlogined">
-        
-        <li class="navbar-login">
-            <a rel="nofollow" href="login.html">login</a>
-        </li>
-    </ul>
-  <?php } ?>
-  <div class="container">
+<body>
+<div class="navbar">
+        <?php 
+            if ($_SESSION["username"])
+            {
+                echo "<a href='logout.php' id='login'>LOGOUT</a>";
+                echo "<a href='homepage.php' id='login'>Welcome, " . $_SESSION["username"] . "</a>";
+            }
+            else
+            {
+                echo "<a href='Login.php' id='login'>LOGIN</a>";
+            }
+        ?>
+        <a href="Upload.php" id="login">UPLOAD</a>
+        <a href="search.php" id="login">SEARCH</a>
+        <a href="homepage.php" id="login">BROWSE</a>
+        <a href="homepage.php" id="finks">FINKS</a>
+    </div>
+    <div class="container">
     <!-- search -->
     <div class="search-box">
-      <form class="bs-example bs-example-form" action="results_sample.php" method="get">
+      <form class="bs-example bs-example-form" action="homepage.php" method="post">
             <div class="row">
                 
                 <div class="col-lg-12"> 
                     
                     
                     <div class="input-group input-group-lg" style="top: 15px;">
-                         <h1>Find restaurant.</h1>
+                         <h1>Find image.</h1>
                          <!--input box search-->
-                         <input type="text" class="form-control" id="query" placeholder="Search by the restaurant's name" name="keyword"/>
+                         <input type="text" class="form-control" id="query" placeholder="Search by the image's title" name="keyword"/>
                          
                        <!--search button-->
+                       <br>
                         <span class="input-group-btn">
-                            <button class="btn btn-danger" type="submit">SERACH</button>
+                            <button class="btn btn-danger" type="submit">Search</button>
                         </span>
                         
                     </div>
@@ -86,43 +59,7 @@ if($blog_uid){
                 </div>
             </div>
       </form>
-     
-    
-
-    </div>
-    
+    </div> 
   </div>
-  <!-- share -->
-  <div class="share">
-    <h2>FOLLOW AND CONTACT US</h2>
-    <div class="icons">
-      <a href="#">
-        <i class="fa fa-facebook"></i>
-      </a>
-      <a href="#">
-        <i class="fa fa-instagram"></i>
-      </a>
-      <a href="#">
-        <i class="fa fa-twitter"></i>
-      </a>
-       <a href="#">
-        <i class="fa fa-google"></i>
-      </a>
-      <a href="#">
-        <i class="fa fa-phone"></i>
-      </a>
-      
-    </div>
-  </div>
-  <!-- footer -->
-  <footer>
-    <p>
-      WORLDFOODS.COM All Right Reserved. 
-      <em class="fr">Explore restaurants all around the world.</em>
-    </p>
-  </footer>
-
-  </body>
-  </html>
-
-        
+</body>
+</html>

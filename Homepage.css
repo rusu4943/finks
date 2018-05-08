@@ -1,0 +1,52 @@
+.content
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 100px;
+    position:center;
+    text-align: center;
+    overflow: hidden;  
+}
+
+.imagecontent
+{
+    text-align: center;
+    width: 100%;
+}
+
+.subimagecontent
+{
+    border: black solid;
+    width: 36%;
+}
+
+.infobar
+{
+    color: white;
+    margin-bottom: 6%;
+    margin-left: 32%;
+    width: 36%;
+    height: 4em;
+    border-radius: 10px;
+    background-color: #33cccc;
+    margin-top: 0px;
+}
+
+.titlebar
+{
+    color: white;
+    margin-left: 32%;
+    width: 36%;
+    height: 4em;
+    border-radius: 10px;
+    background-color: #33cccc;
+    margin-top: 0px;
+}
+
+.titlebar h1, .infobar h1
+{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
