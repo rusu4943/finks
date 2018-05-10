@@ -63,8 +63,8 @@
                     {
                         if (strpos($row["title"], $filter) === FALSE)
                         {
-                            echo $row["title"];
-                            echo $filter;
+                            /*echo $row["title"];*/
+                            /*echo $filter;*/
                             continue;
                         }
                     }
