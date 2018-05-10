@@ -1,3 +1,2 @@
 # finks
-Finks is an image sharing website project for CSCI-3308. You can create accounts, login, and upload images via URL. Please note that in order to access the upload page,
-you must have first created an account and logged in. All milestones are located within the *milestones* folder.
+Finks is an image sharing website project for CSCI-3308. You can create accounts, login, and upload images via URL. Please note that in order to access the upload page, you must have first created an account and logged in. Most milestones are located within the *milestones* folder. Final revisions for our website will be contained in the "final-revision" folder, when running our site you will need to use the files contained in that folder and from the database folder. Our database file will be in the database folder with the name "finksdb.sql"
